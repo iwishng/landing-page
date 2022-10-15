@@ -8,10 +8,13 @@ import VendorMid from "../components/vendorMid";
 import VendorJoin from "../components/vendorJoin";
 import Download from "../components/download";
 import Modal from "../components/modal";
+import { useGlobalContext } from "../context";
 
 const Vendor = () => {
+  const { setInd } = useGlobalContext();
   useEffect(() => {
     window.scrollTo({ top: 0 });
+    setInd(false);
   }, []);
 
   const [modal, setModal] = useState(false);

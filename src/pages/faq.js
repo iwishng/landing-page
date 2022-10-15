@@ -4,9 +4,12 @@ import SingleFaq from "../components/singleFaq";
 import { questions } from "../data";
 import Download from "../components/download";
 import Shared from "../components/shared";
+import { useGlobalContext } from "../context";
 const FAQ = () => {
+  const { setInd } = useGlobalContext();
   useEffect(() => {
     window.scrollTo({ top: 0 });
+    setInd(false);
   }, []);
   return (
     <Shared>

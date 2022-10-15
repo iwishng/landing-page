@@ -3,10 +3,13 @@ import call from "../images/call.png";
 import mail from "../images/mail.png";
 import venue from "../images/venue.png";
 import Shared from "../components/shared";
+import { useGlobalContext } from "../context";
 
 const Contact = () => {
+  const { setInd } = useGlobalContext();
   useEffect(() => {
     window.scrollTo({ top: 0 });
+    setInd(false);
   }, []);
   return (
     <Shared>

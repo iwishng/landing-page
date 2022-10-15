@@ -1,9 +1,12 @@
 import { useEffect } from "react";
 import Shared from "../components/shared";
+import { useGlobalContext } from "../context";
 
 const Terms = () => {
+  const { setInd } = useGlobalContext();
   useEffect(() => {
     window.scrollTo({ top: 0 });
+    setInd(false);
   }, []);
   return (
     <Shared>

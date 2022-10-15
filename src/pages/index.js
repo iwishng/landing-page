@@ -3,10 +3,13 @@ import Hero from "../components/hero";
 import Center from "../components/center";
 import Download from "../components/download";
 import Shared from "../components/shared";
+import { useGlobalContext } from "../context";
 
 const Home = () => {
+  const { setInd } = useGlobalContext();
   useEffect(() => {
     window.scrollTo({ top: 0 });
+    setInd(true);
   }, []);
   return (
     <Shared>

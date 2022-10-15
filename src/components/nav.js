@@ -3,12 +3,19 @@ import logo from "../images/logo.png";
 import { FiMenu } from "react-icons/fi";
 import { IoClose } from "react-icons/io5";
 import { Link } from "react-router-dom";
+import NavLink from "./navLink";
 
 const Nav = () => {
   const [nav, setNav] = useState(false);
   const closeNav = () => {
     setNav(false);
   };
+  const navLinks = [
+    { title: "home", url: "/" },
+    { title: "feature", url: "#feature" },
+    { title: "contact us", url: "/contact" },
+    { title: "become a vendor", url: "/vendor" },
+  ];
   return (
     <nav className='shadow-md w-full'>
       <div className='max-w-7xl w-[90%] mx-auto py-4 md:py-0 flex flex-col md:flex-row justify-between  md:items-center'>
@@ -28,31 +35,9 @@ const Nav = () => {
             nav ? "" : "hidden"
           }  md:flex flex-col md:flex-row text-base md:items-center space-y-6 md:space-y-0 my-4 md:space-x-5 text-gray-700`}
         >
-          <Link to='/'>
-            <h4 className='my-5' onClick={closeNav}>
-              Home
-            </h4>
-          </Link>
-          <a href='#feature'>
-            <h4 className='my-5' onClick={closeNav}>
-              Feature
-            </h4>
-          </a>
-          <Link to='/contact'>
-            <h4 className='my-5' onClick={closeNav}>
-              Contact Us
-            </h4>
-          </Link>
-          {/* <Link to='faq'>
-            <h4 className='my-5' onClick={closeNav}>
-              FAQ
-            </h4>
-          </Link> */}
-          <Link to='/vendor'>
-            <h4 className='my-5' onClick={closeNav}>
-              Become a Vendor
-            </h4>
-          </Link>
+          {navLinks.map((item, i) => {
+            return <NavLink key={i} {...item} closeNav={closeNav} index={i} />;
+          })}
         </div>
 
         <button
