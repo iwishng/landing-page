@@ -19,8 +19,8 @@ const Download = () => {
         Start creating unlimited wishlist by downloading the app now
       </p>
       <div className='grid grid-cols-2 items-center space-x-4'>
-        <img src={google} className='w-fit h-12' alt='' />
-        <img src={app} className='w-fit h-12' alt='' />
+        <img src={google} className='w-fit h-12 sm:w-40 sm:h-14' alt='' />
+        <img src={app} className='w-fit h-12 sm:w-40 sm:h-14' alt='' />
       </div>
       <img
         className='absolute w-40 sm:w-[50%] lg:w-[45%] -bottom-40 -left-64 rounded-xl'
